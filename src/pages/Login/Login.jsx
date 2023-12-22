@@ -15,10 +15,8 @@ const Login = () => {
     const { singIn } = useAuth()
     const navigate = useNavigate()
     const location = useLocation();
-
     const from = location.state?.from?.pathname || "/";
 
-   
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;

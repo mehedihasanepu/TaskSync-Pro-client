@@ -1,5 +1,5 @@
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hook/useAxiosPublic";
 import googleIcon from "../../assets/icon/google.gif"
 import useAuth from "../../hook/useAuth";
@@ -7,10 +7,11 @@ import useAuth from "../../hook/useAuth";
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth()
-
     const axiosPublic = useAxiosPublic();
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || "/";
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
@@ -23,8 +24,9 @@ const SocialLogin = () => {
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data);
-                        navigate('/');
+                       
                     })
+                navigate(from, { replace: true });
             })
     }
     return (
