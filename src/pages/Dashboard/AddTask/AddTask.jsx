@@ -3,12 +3,17 @@ import Swal from "sweetalert2";
 import Select from 'react-select'
 import { useState } from "react";
 import useAxiosPublic from "../../../hook/useAxiosPublic";
+import useAuth from "../../../hook/useAuth";
+import { useNavigate } from "react-router-dom";
 
 
 const AddTask = () => {
     const { register, handleSubmit, reset } = useForm();
     const [priority, setPriority] = useState('')
     const axiosPublic = useAxiosPublic()
+    const { user } = useAuth();
+    const navigate = useNavigate()
+
 
     const options = [
         { value: 'High', label: 'High' },
@@ -27,7 +32,8 @@ const AddTask = () => {
             priority: priority,
             descriptions: data.descriptions,
             deadlines: data.deadlines,
-            status: "todo"
+            status: "todo",
+            email: user.email
 
 
 
@@ -40,6 +46,7 @@ const AddTask = () => {
         if (taskRes.data.insertedId) {
             // show success popup
             reset();
+            navigate('/dashboard/allTask')
             Swal.fire({
                 position: "top-end",
                 icon: "success",
