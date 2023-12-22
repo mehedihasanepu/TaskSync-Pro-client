@@ -2,6 +2,7 @@ import { FaHome, FaTasks ,  FaUser, FaUsers, } from "react-icons/fa";
 import { MdOutlineAddCircleOutline } from "react-icons/md"
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hook/useAuth";
+import { Toaster } from "react-hot-toast";
 
 
 const Dashboard = () => {
@@ -65,11 +66,7 @@ const Dashboard = () => {
                             <FaHome></FaHome>
                             Home</NavLink>
                     </li>
-                    {/* <li>
-                        <NavLink to="/membership">
-                            <FaUsers></FaUsers>
-                            Membership</NavLink>
-                    </li> */}
+                    
                 </ul>
             </div>
 
@@ -78,6 +75,10 @@ const Dashboard = () => {
             <div className="flex-1 p-8 pl:0 lg:pl-28">
                 <Outlet></Outlet>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
 
     );

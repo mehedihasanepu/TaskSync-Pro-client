@@ -34,9 +34,6 @@ const AddTask = () => {
             deadlines: data.deadlines,
             status: "todo",
             email: user.email
-
-
-
         }
         console.log(taskItem);
 
