@@ -52,6 +52,7 @@ const AllTask = () => {
         }
     };
 
+
     const handleDeleteTask = (id) => {
         Swal.fire({
             title: "Are you sure to delete this task?",
@@ -63,7 +64,7 @@ const AllTask = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosPublic.delete(`/post/${id}`).then((res) => {
+                axiosPublic.delete(`/task/${id}`).then((res) => {
                     if (res.data.deletedCount > 0) {
                         refetch();
                         Swal.fire({
@@ -76,7 +77,6 @@ const AllTask = () => {
             }
         });
     };
-
 
 
     return (
@@ -125,18 +125,16 @@ const AllTask = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex gap-3">
+                                    <div className="flex gap-2">
+                                            <button><FaEdit className="text-xl text-[#239696]"
+                                            ></FaEdit></button>
 
-                                        <button><MdDelete className="text-xl text-[#258989]"
+
+                                            <button><MdDelete className="text-[24px] text-[#239696]"
                                                 onClick={() => handleDeleteTask(task._id)}
-                                        ></MdDelete></button>
+                                            ></MdDelete></button>
 
-
-                                        <button><FaEdit className="text-xl text-[#258989]"></FaEdit></button>
-
-
-                                        <button onClick={() => handleUpdateStatusOngoing(task._id)}
-                                         className="btn font-medium text-black bg-[#D2E9E9] border-[#C4DFDF]">
+                                        <button onClick={() => handleUpdateStatusOngoing(task._id)} className="btn font-medium text-black bg-[#D2E9E9] border-[#C4DFDF]">
                                             <p >On Going</p>
                                         </button>
                                     </div>
@@ -226,7 +224,7 @@ const AllTask = () => {
 
                                             <div>
 
-                                                <input type="checkbox" checked={task.status === "complete" ? "checked" : ""} className="checkbox border-2" onClick={() => handleUpdateStatusComplete(task._id)} />
+                                                    <input type="checkbox" checked={task.status === "complete" ? "checked":""} className="checkbox border-2" onClick={() => handleUpdateStatusComplete(task._id)} />
                                             </div>
                                             <div>
 
