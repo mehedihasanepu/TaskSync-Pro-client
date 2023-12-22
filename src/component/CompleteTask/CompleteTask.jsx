@@ -14,7 +14,7 @@ const CompleteTask = ({ task, refetch }) => {
 
 
                     <h3 className="text-lg font-semibold">{task.title}</h3>
-                    <div className="flex  items-center gap-5">
+                    <div className="flex  flex-col md:flex-row md:items-center gap-2 md:gap-5">
 
                         {/* <h3>{task.descriptions}</h3> */}
 

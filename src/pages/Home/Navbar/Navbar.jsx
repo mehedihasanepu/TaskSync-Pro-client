@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./navbar.css"
 import UserProfile from "../../../component/UserProfile/UserProfile";
 import useAuth from "../../../hook/useAuth";
+import logo from "../../../assets/image/logo.png"
 const Navbar = () => {
 
     const { user } = useAuth()
@@ -17,13 +18,11 @@ const Navbar = () => {
 
     return (
         <div >
-            <div className=" mb-5 py-3 bg-blue-200 rounded-b-2xl">
+            <div className=" mb-5 py-4 bg-[#D2E9E9] rounded-b-2xl">
                 <div className="flex flex-row items-center md:px-5 justify-between">
                    
                     <Link to='/'>
-                        {/* <img className="w-[160px] h-[65px]" src={logo} alt="" /> */}
-                        <h2 className="text-xl font-bold">Task management</h2>
-
+                        <img className="w-[120px] h-[65px]" src={logo} alt="" />
                     </Link>
                     <div className="lg:hidden flex">
                         <UserProfile></UserProfile>
@@ -37,7 +36,7 @@ const Navbar = () => {
                             </label>
 
                             {isDropdownOpen && (
-                                <ul tabIndex={0} className="menu dropdown-content w-48 mt-3 gap-3 z-[2] p-2 shadow relative right-1  bg-white bg-opacity-90 rounded-box flex-row-reverse">
+                                <ul tabIndex={0} className="menu dropdown-content w-48 mt-3 gap-3 z-[2] p-2 shadow relative right-1  bg-[#F8F6F4] bg-opacity-90 rounded-box flex-row-reverse">
                                     <li>
                                         <a >
                                             <NavLink to="/">Home</NavLink>
@@ -50,7 +49,12 @@ const Navbar = () => {
                                     </li>
                                     <li>
                                         <a>
-                                            <NavLink to="/dashboard">Dashboard</NavLink>
+                                            <NavLink to="/contact">Contact</NavLink>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <NavLink to="/blogs">Blogs</NavLink>
                                         </a>
                                     </li>
                             
@@ -81,7 +85,12 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <a>
-                                    <NavLink className="text-center px-2 py-[5px] bg-gray-100 rounded-md" to="/dashboard">Dashboard</NavLink>
+                                    <NavLink className="text-center px-2 py-[5px] bg-gray-100 rounded-md" to="/contact">Contact</NavLink>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <NavLink className="text-center px-2 py-[5px] bg-gray-100 rounded-md" to="/blogs">Blogs</NavLink>
                                 </a>
                             </li>
                   

@@ -1,3 +1,4 @@
+import AudienceSection from "../../AudienceSection/AudienceSection";
 import Banner from "../Banner/Banner";
 
 
@@ -5,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h1>hiii</h1>
+            <AudienceSection></AudienceSection>
         </div>
     );
 };

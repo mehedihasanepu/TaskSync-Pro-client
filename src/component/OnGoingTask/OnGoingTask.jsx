@@ -116,8 +116,8 @@ const OnGoingTask = ({ task, refetch }) => {
 
 
     return (
-        <div className="flex justify-between items-center">
-            <div className="flex items-center gap-5 mt-5 bg-[#F8F6F4] p-2 rounded-lg">
+        <div className="flex justify-between bg-[#F8F6F4]  items-center mt-5 p-2 rounded-lg">
+            <div className="flex items-center gap-5 ">
 
                 <div>
 
@@ -129,14 +129,14 @@ const OnGoingTask = ({ task, refetch }) => {
                     <div>
 
                         <h3 className="text-lg font-semibold">{task.title}</h3>
-                        <div className="flex  items-center gap-5">
+                        <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
 
                             {/* <h3>{task.descriptions}</h3> */}
 
                             {task.descriptions.length > 20 ?
 
                                 <div className="flex items-center">
-                                    <p className="">{task.descriptions.slice(0, 20)}</p>
+                                    <p >{task.descriptions.slice(0, 20)}</p>
                                     <button className="text-blue-700 font-semibold pl-2" onClick={() => document.getElementById('my_modal_3').showModal()}>read more</button>
                                     <dialog id="my_modal_3" className="modal modal-bottom sm:modal-middle">
                                         <div className="modal-box ">

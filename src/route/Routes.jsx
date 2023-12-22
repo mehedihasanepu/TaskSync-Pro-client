@@ -8,6 +8,9 @@ import Dashboard from "../Layout/Dashboard";
 import UserProfileDashboard from "../pages/Dashboard/UserProfileDashboard/UserProfileDashboard";
 import AddTask from "../pages/Dashboard/AddTask/AddTask";
 import AllTask from "../pages/Dashboard/AllTask/AllTask";
+import About from "../pages/About/About";
+import Contract from "../pages/Contact/Contact";
+import Blogs from "../pages/Blogs/Blogs";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +23,19 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
 
+            {
+                path: 'blogs',
+                element: <Blogs></Blogs>
+            },
+            {
+                path: 'about',
+                element: <About></About>
+            },
+
+            {
+                path: 'contact',
+                element:<Contract></Contract>
+            },
             {
                 path: 'login',
                 element: <Login></Login>

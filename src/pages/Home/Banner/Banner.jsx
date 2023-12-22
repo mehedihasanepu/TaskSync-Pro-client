@@ -5,7 +5,7 @@ const Banner = () => {
         <div className="max-w-screen-xl mx-auto ">
             <div className="flex justify-between items-center ">
                 <div className="flex-1 space-y-3">
-                    <h2 className="text-5xl font-bold">Task Management</h2>
+                    <h2 className="text-5xl font-bold">TaskSync Pro</h2>
                     <p>
                         <span className="font-semibold text-lg text-blue-800">Welcome to our task management website,</span> your ultimate solution for organizing, prioritizing, and tracking your tasks effortlessly. Our platform offers intuitive features designed to streamline your workflow, allowing you to create, assign, and manage tasks efficiently.
                     </p>

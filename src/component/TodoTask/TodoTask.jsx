@@ -117,18 +117,18 @@ const TodoTask = ({ task, refetch}) => {
 
     return (
         <div>
-            <div className="flex justify-between items-center mt-5 bg-[#F8F6F4] p-2 rounded-lg">
+            <div className="flex justify-between  items-center mt-5 bg-[#F8F6F4] p-2 rounded-lg">
 
                 <div>
 
 
                     <h3 className="text-lg font-semibold">{task.title}</h3>
-                    <div className="flex  items-center gap-5">
+                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
 
-                        {/* <h3>{task.descriptions}</h3> */}
+                        
 
                         {task.descriptions.length > 20 ?
-                            <td>
+                           
                                 <div className="flex items-center">
                                     <p className="">{task.descriptions.slice(0, 20)}</p>
                                     <button className="text-blue-700 font-semibold pl-2" onClick={() => document.getElementById('my_modal_3').showModal()}>read more</button>
@@ -143,16 +143,16 @@ const TodoTask = ({ task, refetch}) => {
                                         </div>
                                     </dialog>
                                 </div>
-                            </td>
+                       
                             :
-                            <td>{task.descriptions}</td>
+                            <p>{task.descriptions}</p>
                         }
                         <h3>Deadlines: {task.deadlines}</h3>
                         <h3>Priority: {task.priority}</h3>
                     </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex flex-col-reverse md:flex-row items-center gap-2">
                     <button className="text-blue-700 font-semibold pl-2" onClick={() => document.getElementById(task._id).showModal()}><FaEdit className="text-xl text-[#239696]"></FaEdit></button>
                     <dialog id={task._id} className="modal modal-bottom sm:modal-middle">
                         <div className="modal-box ">
